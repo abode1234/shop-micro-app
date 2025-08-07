@@ -1,0 +1,17 @@
+{
+  "name": "shop-micro-app-v20-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "implicitDependencies": ["shop-micro-app-v20"],
+  "targets": {
+    "e2e": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{e2eProjectRoot}"],
+      "options": {
+        "jestConfig": "apps/shop-micro-app-v20-e2e/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "dependsOn": ["shop-micro-app-v20:build"]
+    }
+  }
+}
